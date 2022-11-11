@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id("KullaniciID");
             $table->string('Kullaniciad');
             $table->string('Kullanicisoyad');
-            $table->string('Kullanicitel');
+            $table->integer('Kullanicitel');
             $table->string('email')->unique();
             $table->string('password');
             $table->timestamps();
