@@ -14,15 +14,23 @@ use App\Http\Controllers\GirisKayitController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+ Route::redirect('/', '/home');
+Route::get('/home', function () {
+    $GirKulAd=FALSE;
+    $GirKulSoyad=FALSE;
+    return view('welcome',compact("GirKulAd","GirKulSoyad"));
+});
+Route::get('/home/{GirKulAd}/{GirKulSoyad}', function ($GirKulAd,$GirKulSoyad) {
+    return view('welcome',compact("GirKulAd","GirKulSoyad"));
+});
+/**************************************************************************************************** */
+//                      #   SIGN AND LOGİN  # 
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/giris', function () {
-    return view('login_and_sign_page');
-});
+Route::get('/giris', function () {return view('login_and_sign_page');});
 Route::get('/kayit', function () {
-    $hata=FALSE;
-     return view('login_and_sign_page')."<script href='{{asset('assets/js/giris.js')}}'>degis();degis(); </script>";
+    return view('login_and_sign_page')."<script href='{{asset('assets/js/giris.js')}}'>degis();degis(); </script>";
 });
 Route::get('/giris-kayit/kayit',[GirisKayitController::class,'create']);
+Route::get('/giris-kayit/giris',[GirisKayitController::class,'login']);
+
+/**************************************************************************************************** */

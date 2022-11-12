@@ -56,46 +56,29 @@
               />
 
               <button type="submit" class="sign_form_gonder sign_form_item">
-                  gönder
+                  KAYIT OL
               </button>
             </form> 
             <br>
           </div>
           <div class=" u-form u-form-2">
-            <form
-              action="#"
-              class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
-              name="form"
-              style="padding: 10px"
-            >@csrf
-              <div class="u-form-email u-form-group">
-                <input
-                  type="email"
-                  placeholder="Geçerli bir e-posta adresi girin"
-                  name="login_email"
-                  class="u-border-1 u-border-black u-custom-color-5 u-input u-input-rectangle u-text-white"
-                />
-              </div>
-              <div class="u-form-group u-form-name u-form-group-7">
-                <input
-                  type="password"
-                  placeholder="Şifre"
-                  name="login_sifre"
-                  class="u-border-1 u-border-black u-custom-color-5 u-input u-input-rectangle u-text-white"
-                />
-              </div>
-              <div class="u-align-center u-form-group u-form-submit">
-                <a
-                  href="#"
-                  class="giris_button u-active-custom-color-5 u-border-none u-btn u-btn-submit u-button-style u-hover-custom-color-2 u-white u-btn-2"
-                  >GİRİŞ<br />
-                </a>
-                <input
-                  type="submit"
-                  value="submit"
-                  class="u-form-control-hidden"
-                />
-              </div>
+            <form action="/giris-kayit/giris" method="get" class="sign_form">
+            @csrf
+            <input
+              type="email"
+              name="login_email"
+              placeholder="Geçerli bir e-posta adresi girin"
+              class="sign_form_mail sign_form_item"
+            />
+            <input
+            type="password"
+            name="login_sifre"
+            placeholder="Şifre"
+            class="sign_form_sifre sign_form_item"
+            />
+        <button type="submit" class="sign_form_gonder sign_form_item">
+            Giris yap
+        </button>
             </form>
             
           </div>

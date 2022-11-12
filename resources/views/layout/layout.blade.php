@@ -81,28 +81,38 @@
               >LİNK</a
             >
           </li>
-          <li class="u-nav-item">
+          @if ($GirKulAd)
+            <li class="u-nav-item">
+                <a
+                  class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white"
+                  href="/profil"
+                  style="padding: 10px"
+                >{{"$GirKulAd $GirKulSoyad"}}</a>
+              </li>
+          @else
+            <li class='u-nav-item'>
             <a
-              class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white"
-              href="/giris"
-              style="padding: 10px"
+              class='u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white'
+              href='/giris'
+              style='padding: 10px'
               >Giriş</a
             >
           </li>
-          <li class="u-nav-item">
+          <li class='u-nav-item'>
             <a
-              class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white"
-              style="padding: 10px"
-              href="/kayit"
+              class='u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white'
+              style='padding: 10px'
+              href='/kayit'
               >Kayıt</a
             >
           </li>
+          @endif
         </ul>
       </div>
       
     </nav>
     <a
-      href="/"
+      href="/home/<?php echo $GirKulAd ?>/<?php echo $GirKulSoyad?>"
       class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
       >BİZİM EVİM<br />
     </a>
