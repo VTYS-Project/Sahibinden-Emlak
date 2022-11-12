@@ -46,6 +46,7 @@ class GirisKayitController extends Controller
                 $GirKulPass=$parca->password;
             }
             // view()->share('giris_kontrol', $giriskontrol);
+            //return view("/home/$GirKulAd%$GirKulSoyad%$GirKulTel%$GirKulMail%$GirKulPass");
             return view("welcome",compact("GirKulAd","GirKulSoyad","GirKulTel","GirKulMail","GirKulPass"));
         }
         else{

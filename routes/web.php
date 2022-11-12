@@ -14,14 +14,13 @@ use App\Http\Controllers\GirisKayitController;
 | contains the "web" middleware group. Now create something great!
 |
 */
- Route::redirect('/', '/home');
+Route::redirect('/', '/home');
 Route::get('/home', function () {
     $GirKulAd=FALSE;
-    $GirKulSoyad=FALSE;
-    return view('welcome',compact("GirKulAd","GirKulSoyad"));
+    return view('welcome',compact("GirKulAd"));
 });
-Route::get('/home/{GirKulAd}/{GirKulSoyad}', function ($GirKulAd,$GirKulSoyad) {
-    return view('welcome',compact("GirKulAd","GirKulSoyad"));
+Route::get('/home/GirKulAd={GirKulAd}%GirKulSoyad={GirKulSoyad}%GirKulTel={GirKulTel}%GirKulMail={GirKulMail}%GirKulPass={GirKulPass}', function ($GirKulAd,$GirKulSoyad,$GirKulTel,$GirKulMail,$GirKulPass) {
+    return view('welcome',compact("GirKulAd","GirKulSoyad","GirKulTel","GirKulMail","GirKulPass"));
 });
 /**************************************************************************************************** */
 //                      #   SIGN AND LOGİN  # 

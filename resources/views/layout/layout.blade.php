@@ -111,11 +111,19 @@
       </div>
       
     </nav>
+    @if ($GirKulAd)
     <a
-      href="/home/<?php echo $GirKulAd ?>/<?php echo $GirKulSoyad?>"
+    href="/home/GirKulAd=<?php echo $GirKulAd ?>%GirKulSoyad=<?php echo $GirKulSoyad?>%GirKulTel=<?php echo $GirKulTel?>%GirKulMail=<?php echo $GirKulMail?>%GirKulPass=<?php echo $GirKulPass?>"
+    class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
+    >BİZİM EVİM<br />
+    </a>
+    @else
+    <a
+      href="/home"
       class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
       >BİZİM EVİM<br />
     </a>
+    @endif
   </header>
     
 
