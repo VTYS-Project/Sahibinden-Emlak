@@ -121,7 +121,7 @@
     <a
       href="/home"
       class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
-      >BİZİM EVİM<br />
+      >EMLAK 365<br />
     </a>
     @endif
   </header>
