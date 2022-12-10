@@ -1,3 +1,9 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html lang="tr">
   <head>
@@ -7,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="{{asset("assets/css/nicepage.css")}}" media="screen" />
     <link rel="stylesheet" href="{{asset("assets/css/app.css")}}" media="screen" />
-    <script src="https://kit.fontawesome.com/8c0421717c.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/8c0421717c.js" crossorigin="anonymous"></script> --}}
     <script
       class="u-script"
       type="text/javascript"
@@ -65,7 +71,7 @@
       </div>
       <div class="u-custom-menu u-nav-container">
         <ul class="u-nav u-spacing-20 u-unstyled u-nav-1">
-          <li class="u-nav-item">
+          {{-- <li class="u-nav-item">
             <a
               href="#"
               class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white"
@@ -80,14 +86,22 @@
               style="padding: 10px"
               >LİNK</a
             >
-          </li>
-          @if ($GirKulAd)
+          </li> --}}
+          @if ($_SESSION)
             <li class="u-nav-item">
                 <a
                   class="u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white"
                   href="/profil"
                   style="padding: 10px"
-                >{{"$GirKulAd $GirKulSoyad"}}</a>
+                >{{$_SESSION["kullaniciadi"]." ".$_SESSION["kullanicisoyadi"]}}</a>
+              </li>
+              <li class='u-nav-item'>
+                <a
+                  class='u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white'
+                  href='/cikis'
+                  style='padding: 10px'
+                  >Çıkış</a
+                >
               </li>
           @else
             <li class='u-nav-item'>
@@ -102,7 +116,7 @@
             <a
               class='u-border-active-palette-1-base u-border-hover-palette-1-light-1 u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-white'
               style='padding: 10px'
-              href='/kayit'
+              href='kayit'
               >Kayıt</a
             >
           </li>
@@ -111,19 +125,11 @@
       </div>
       
     </nav>
-    @if ($GirKulAd)
     <a
-    href="/home/GirKulAd=<?php echo $GirKulAd ?>%GirKulSoyad=<?php echo $GirKulSoyad?>%GirKulTel=<?php echo $GirKulTel?>%GirKulMail=<?php echo $GirKulMail?>%GirKulPass=<?php echo $GirKulPass?>"
-    class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
-    >BİZİM EVİM<br />
-    </a>
-    @else
-    <a
-      href="/home"
+      href="/"
       class="u-border-active-palette-2-base u-border-hover-palette-1-base u-border-none u-btn u-button-style u-none u-text-black u-btn-1"
       >EMLAK 365<br />
     </a>
-    @endif
   </header>
     
 

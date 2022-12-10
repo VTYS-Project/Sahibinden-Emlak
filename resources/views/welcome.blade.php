@@ -12,13 +12,16 @@
 @endsection
 <!--    css end  -->
 @php
-  use Illuminate\Support\Facades\DB;
+  use App\Http\Controllers\HomeEmlakController;
+  $ilans=HomeEmlakController::HomeReadEmlak();
+
+  //session_start();
 @endphp
 <!--    section 1   -->
 
 @section("main")
   <section
-      class="u-align-left u-clearfix u-image u-shading u-section-1"
+      class="u-align-left u-clearfix u-image u-shading app-u-section-1"
       src=""
       data-image-width="1200"
       data-image-height="628"
@@ -33,7 +36,7 @@
   <main class="main">
     <section class="section-2">
         <!--    section 2   -->
-        <div class="section-2_div container bg-secondary">
+        {{-- <div class="section-2_div container bg-secondary">
             <div class="section-2_div row row-cols-3">
                 <div class="section-2_div col-4 position-relative">
                     <a href="#" class="nav_item-div_item section-2_div_item">ARSA</a>
@@ -53,7 +56,7 @@
                     <a href="#" class="nav_item-div_item section-2_div_item ">İŞYERİ</a>
                 </div>
             </div>
-        </div>
+        </div>--}}
         
         <section class="u-clearfix u-section-2" id="sec-c75c">
             <div class="u-clearfix u-gutter-0 u-layout-wrap u-layout-wrap-1">
@@ -80,26 +83,22 @@
                 <div class="u-repeater u-repeater-1">
 
                   @foreach ($ilans as $ilan )
-                  <div class="u-container-style u-list-item u-radius-50 u-repeater-item u-shape-round u-video-cover u-white">
-                    <div class="u-container-layout u-similar-container u-container-layout-1">
-                      <h3 class="u-text u-text-default u-text-1">{{$ilan["baslik"]}}</h3>
-                      <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
-                      {{-- <img alt="" class="u-expanded-width-lg u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-image u-image-default u-image-1" data-image-width="2000" data-image-height="1333" {{$ilan["resim"]}}> --}}
-                      @php
-                        echo $ilan["resim"];
-                      @endphp
-                      {{-- {{$ilan["resim"]}} --}}
-                      <p class="u-align-center u-text u-text-2">{{$ilan["adres"]}}</p>
-                      <p class="u-align-center u-text u-text-3">{{$ilan["fiyat"]}}</p>
-                    </div>
-                  </div>
+                    @php
+                      $id=$ilan["id"];
+                    @endphp
+                    <a href="emlak/{{$id}}">
+                      <div class="u-container-style u-list-item u-radius-50 u-repeater-item u-shape-round u-video-cover u-white">
+                        <div class="u-container-layout u-similar-container u-container-layout-1">
+                          <h3 class="u-text u-text-default u-text-1">{{$ilan["baslik"]}}</h3>
+                          <div class="u-border-4 u-border-palette-3-base u-expanded-width u-line u-line-horizontal u-line-1"></div>
+                          <img src='data:@php echo $ilan["resim"]->resimID;@endphp;base64,@php echo$ilan["resim"]->resim;@endphp'width="100%"  height="250px"/>
+                          {{-- {{$ilan["resim"]}} --}}
+                          <p class="u-align-center u-text u-text-2">{{$ilan["adres"]}}</p>
+                          <p class="u-align-center u-text u-text-3">{{$ilan["fiyat"]}}</p>
+                        </div>
+                      </div>
+                    </a>
                   @endforeach
-                  
-                  {{-- @foreach ($ilans as $ilan) 
-                    ';
-                  @endforeach --}}
-
-
                 </div>
               </div>
             </div>

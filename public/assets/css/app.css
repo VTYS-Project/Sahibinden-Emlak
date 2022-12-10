@@ -17,7 +17,7 @@ body {
 .social:hover {
     color: #4a4a4a;
 }
-.u-section-1 {
+.app-u-section-1 {
     background-image: linear-gradient(
             0deg,
             rgba(0, 0, 0, 0.4),
@@ -28,7 +28,7 @@ body {
     min-height: 100vh;
 }
 
-.u-section-1 .u-shape-1 {
+.app-u-section-1 .u-shape-1 {
     background-image: linear-gradient(
         200deg,
         rgba(255, 255, 255, 0.15),
@@ -36,62 +36,62 @@ body {
     );
 }
 
-.u-section-1 .u-text-1 {
+.app-u-section-1 .u-text-1 {
     font-size: 3.75rem;
     font-weight: 800;
     margin: 150px calc(((100% - 1140px) / 2) + 686px) 0
         calc(((100% - 1140px) / 2));
 }
 
-.u-section-1 .u-text-2 {
+.app-u-section-1 .u-text-2 {
     font-size: 1.5rem;
     margin: 76px calc(((100% - 1140px) / 2) + 570px) 60px
         calc(((100% - 1140px) / 2) + 50px);
 }
 
 @media (max-width: 1199px) {
-    .u-section-1 .u-text-1 {
+    .app-u-section-1 .u-text-1 {
         margin-right: calc(((100% - 940px) / 2) + 486px);
         margin-left: calc(((100% - 940px) / 2));
     }
 
-    .u-section-1 .u-text-2 {
+    .app-u-section-1 .u-text-2 {
         margin-right: calc(((100% - 940px) / 2) + 420px);
         margin-left: calc(((100% - 940px) / 2));
     }
 }
 
 @media (max-width: 991px) {
-    .u-section-1 .u-text-1 {
+    .app-u-section-1 .u-text-1 {
         margin-right: calc(((100% - 720px) / 2) + 266px);
         margin-left: calc(((100% - 720px) / 2));
     }
 
-    .u-section-1 .u-text-2 {
+    .app-u-section-1 .u-text-2 {
         margin-right: calc(((100% - 720px) / 2) + 200px);
         margin-left: calc(((100% - 720px) / 2));
     }
 }
 
 @media (max-width: 767px) {
-    .u-section-1 .u-text-1 {
+    .app-u-section-1 .u-text-1 {
         margin-right: calc(((100% - 540px) / 2) + 86px);
         margin-left: calc(((100% - 540px) / 2));
     }
 
-    .u-section-1 .u-text-2 {
+    .app-u-section-1 .u-text-2 {
         margin-right: calc(((100% - 540px) / 2) + 20px);
         margin-left: calc(((100% - 540px) / 2));
     }
 }
 
 @media (max-width: 575px) {
-    .u-section-1 .u-text-1 {
+    .app-u-section-1 .u-text-1 {
         margin-right: calc(((100% - 340px) / 2));
         margin-left: calc(((100% - 340px) / 2));
     }
 
-    .u-section-1 .u-text-2 {
+    .app-u-section-1 .u-text-2 {
         margin-right: calc(((100% - 340px) / 2));
         margin-left: calc(((100% - 340px) / 2));
     }

@@ -1,8 +1,14 @@
+<?php
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px" lang="tr">
   <head>
     <meta charset="utf-8" />
-    <title>Sahibinden Emlak | Giriş</title>
+    <title>Sahibinden Emlak | Giriş Kayıt</title>
     <link rel="stylesheet" href="{{asset("assets/css/nicepage.css")}}" media="screen" />
     <link rel="stylesheet" href="{{asset("assets/css/login.css")}}" media="screen" />
     <script class="u-script" type="text/javascript" src="{{asset("assets/js/jquery.js")}}"></script>
@@ -22,24 +28,27 @@
       >
         <div class="u-container-layout u-container-layout-1">
           <div class="u-custom-color-4 u-form u-form-1 sign_div">
-            <form action="/giris-kayit/kayit" method="get" class="sign_form">
+            <form action="kayit-yap" method="get" class="sign_form">
               <input
                   type="text"
                   name="sign_ad"
                   placeholder="Adınızı girin"
                   class="sign_form_ad sign_form_item"
+                  autocomplete="off"
               />
               <input
                   type="text"
                   name="sign_soyad"
                   placeholder="Soy adınızı girin"
                   class="sign_form_soyad sign_form_item"
+                  autocomplete="off"
               />
               <input
                   type="email"
                   name="sign_email"
                   placeholder="Geçerli bir e-posta adresi girin"
                   class="sign_form_mail sign_form_item"
+                  autocomplete="off"
               />
               <input
                   type="tel"
@@ -47,12 +56,14 @@
                   name="sign_phone"
                   placeholder="Telefonunuzu girin (örn. 5xx xxx xx xx)"
                   class="sign_form_tel sign_form_item"
+                  autocomplete="off"
               />
               <input
                   type="text"
                   name="sign_sifre"
                   placeholder="Şifre"
                   class="sign_form_sifre sign_form_item"
+                  autocomplete="off"
               />
 
               <button type="submit" class="sign_form_gonder sign_form_item">
@@ -62,7 +73,7 @@
             <br>
           </div>
           <div class=" u-form u-form-2">
-            <form action="/giris-kayit/giris" method="get" class="sign_form">
+            <form action="giris-yap" method="post" class="sign_form">
             @csrf
             <input
               type="email"

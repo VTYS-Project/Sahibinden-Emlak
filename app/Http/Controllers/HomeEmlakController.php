@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 
 class HomeEmlakController extends Controller
 {
-    public static function readEmlak()
+    public static function HomeReadEmlak()
     {
         $rastgele=DB::select('SELECT ilanID FROM ilan ORDER BY RAND() LIMIT 6'); // rastglele 6 ilan id
         $anasayfa_ilanlar=[];
@@ -18,6 +18,7 @@ class HomeEmlakController extends Controller
         {
             $newReadilan=DB::select('select Baslik,Fiyat,MahalleID from ilan where ilanID = ?', [$rastgel->ilanID]);
             //id ile resmin tüm bilgileri
+            // V aşagıdaki yeni foreach dizi içerisindeki diziyi okumak için açıldı V
             foreach($newReadilan as $ilan)
             {
                 $mahalle=DB::select('select Mahalle,IlceID from mahalle where MahalleID = ?', [$ilan->MahalleID]);
@@ -27,19 +28,9 @@ class HomeEmlakController extends Controller
                 $ilce=$ilce[0]->Ilce;
                 $il=$il[0]->Il;
                 $anaresim=DB::select('select resim,resimID from resim where ilanID = ?', [$rastgel->ilanID])[0];
-                $anaresim="<img src='data:".$anaresim->resimID.";base64,".base64_encode($anaresim->resim)."' width='100%'  height='250px'/>";
-                //echo $anaresim;
-                //echo $ilan->Baslik."<br>".$ilan->Fiyat."<br>".$anaresim."<br>".$mahalle."<br>".$ilce."<br>".$il."<br>";
-
-                $temp=array("baslik"=>$ilan->Baslik,"fiyat"=>$ilan->Fiyat,"resim"=>$anaresim,"adres"=>"$mahalle mahallesi / $ilce / $il");
-                /*echo gettype($temp)." <br>";
-                echo gettype($anasayfa_ilanlar)." <br><br>";*/
-                //print_r($anasayfa_ilanlar);
-
+                //$anaresim="<img src='data:".$anaresim->resimID.";base64,".base64_encode($anaresim->resim)."' width='100%'  height='250px'/>";
+                $temp=array("id"=>$rastgel->ilanID,"baslik"=>$ilan->Baslik,"fiyat"=>$ilan->Fiyat,"resim"=>$anaresim,"adres"=>"$mahalle mahallesi / $ilce / $il");
                 $anasayfa_ilanlar[$i]=$temp;
-                /*echo "<br><br><br><br><br>*********************************************************************************";
-                print_r($anasayfa_ilanlar);
-                echo "<br>";*/
                 $i+=1;
             }
             
